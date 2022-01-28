@@ -1,0 +1,30 @@
+{
+  "name": "web-apps-aggregator",
+  "version": "1.0.0",
+  "description": "A playground to test web components",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinimarcili/web-apps-aggregator.git"
+  },
+  "keywords": [
+    "webcomponents",
+    "javascript",
+    "typescript"
+  ],
+  "author": "Vinícius Marcili",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinimarcili/web-apps-aggregator/issues"
+  },
+  "homepage": "https://github.com/vinimarcili/web-apps-aggregator#readme",
+  "devDependencies": {
+    "@lit/localize-tools": "^0.6.0"
+  },
+  "dependencies": {
+    "@lit/localize": "^0.11.2",
+    "lit": "^2.1.2"
+  }
+}
