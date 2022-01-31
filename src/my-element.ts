@@ -17,11 +17,13 @@ import { customElement, property } from 'lit/decorators.js'
 @customElement('my-element')
 export class MyElement extends LitElement {
   static override styles = css`
+    @import url('/styles/variables.css');
     :host {
       display: block;
       border: solid 1px gray;
       padding: 16px;
       max-width: 800px;
+      background-color: var(--red);
     }
   `
 
