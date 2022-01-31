@@ -1,11 +1,8 @@
-/**
- * @license
- * Copyright 2019 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
-
-import { LitElement, html, css } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import style from '../../../src/assets/styles/css/variables.css'
+import global from '../../../src/assets/styles/scss/global.scss'
+import customElementStyles from './custom-element.scss'
 
 /**
  * An example element.
@@ -16,16 +13,21 @@ import { customElement, property } from 'lit/decorators.js'
  */
 @customElement('my-element')
 export class MyElement extends LitElement {
-  static override styles = css`
-    @import url('/styles/variables.css');
-    :host {
-      display: block;
-      border: solid 1px gray;
-      padding: 16px;
-      max-width: 800px;
-      background-color: var(--red);
-    }
-  `
+  @property() greeting = 'Welcome'
+  // static override styles = css`
+  //   @import '/assets/styles/css/variables.css';
+  //   :host {
+  //     display: block;
+  //     border: solid 1px gray;
+  //     padding: 16px;
+  //     max-width: 800px;
+  //     background-color: var(--red);
+  //   }
+  // `
+
+  static override get styles() {
+    return [style, global, customElementStyles]
+  }
 
   /**
    * The name to say "Hello" to.
@@ -57,7 +59,7 @@ export class MyElement extends LitElement {
    * @param name The name to say "Hello" to
    */
   sayHello(name: string): string {
-    return `Hello, ${name}`
+    return this.greeting + ` Hello, ${name}`
   }
 }
 
@@ -66,3 +68,5 @@ declare global {
     'my-element': MyElement
   }
 }
+
+console.log('Hello World!')
