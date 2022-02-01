@@ -10,8 +10,8 @@ const config = {
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    sourceMapFilename: '[name].[hash:8].map',
-    chunkFilename: '[id].[hash:8].js',
+    sourceMapFilename: '[name].[fullhash].map',
+    chunkFilename: '[id].[fullhash].js',
     filename: 'web-apps-aggregator.js',
   },
   devServer: {
