@@ -11,6 +11,7 @@ import icons from '../icons/icons'
 @customElement('web-apps-aggregator')
 export class MyElement extends LitElement {
   @property({ type: String }) theme: 'dark' | 'light' | '' = 'dark'
+  @property({ type: String }) token?: string = ''
 
   @state() private open = false
 
@@ -47,7 +48,7 @@ export class MyElement extends LitElement {
       {
         title: 'Portal',
         icon: 'squid',
-        url: 'https://portal.squidit.com.br/login',
+        url: 'https://portal.squidit.com.br/',
         color: '#FED708',
       },
       {
@@ -59,7 +60,7 @@ export class MyElement extends LitElement {
       {
         title: 'Pay',
         icon: 'pay',
-        url: 'https://app.squidit.com.br/',
+        url: 'https://app.squidit.com.br/payment/info',
         color: '#01A14B',
       },
       {
@@ -112,7 +113,12 @@ export class MyElement extends LitElement {
           ${this.items.map((item) => {
             return html`
               <li>
-                <a href=${item?.url} target="_blank" .title=${item?.title} style="color: ${item?.color}">
+                <a
+                  href=${item?.url + (this.token ? `?token=${this.token}` : '')}
+                  target="_blank"
+                  .title=${item?.title}
+                  style="color: ${item?.color}"
+                >
                   ${icons[item.icon as 'instagram' | 'pay' | 'squid'](item?.color)}
                   <span>${item?.title}</span>
                 </a>
