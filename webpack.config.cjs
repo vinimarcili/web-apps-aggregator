@@ -12,10 +12,10 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     sourceMapFilename: '[name].[hash:8].map',
     chunkFilename: '[id].[hash:8].js',
-    filename: 'custom-element.js',
+    filename: 'web-apps-aggregator.js',
   },
   devServer: {
-    open: true,
+    open: false,
     host: 'localhost',
   },
   plugins: [
@@ -25,7 +25,7 @@ const config = {
     new MiniCssExtractPlugin(),
     {
       apply: (compiler) => {
-        compiler.hooks.afterEmit.tap('AfterEmitPlugin', () => {
+        compiler.hooks.entryOption.tap('entryOptionPlugin', () => {
           exec('npm run localize', (err, stdout, stderr) => {
             if (stdout) process.stdout.write(stdout)
             if (stderr) process.stderr.write(stderr)
@@ -51,10 +51,12 @@ const config = {
       // },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-        type: 'asset',
+        loader: 'file-loader',
+        exclude: ['/node_modules/'],
       },
       {
         test: /\.css|\.s(c|a)ss$/,
+        exclude: ['/node_modules/'],
         use: [
           {
             loader: 'lit-scss-loader',

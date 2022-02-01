@@ -1,3 +1,11 @@
 :host {
-  --red: #ff0000;
+  --white: #F6F6F8;
+  --black: #212529;
+  --black_light: #495057;
+  --gray: #98A0A8;
+  --gray_light: #E9EBF0;
+  --gray_dark: #707981;
+  --green: #01a14b;
+  --red: #01ED6E;
+  --pink: #E94589;
 }

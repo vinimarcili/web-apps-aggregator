@@ -2,7 +2,7 @@
   "version": "experimental",
   "tags": [
     {
-      "name": "my-element",
+      "name": "web-apps-aggregator",
       "path": "./src/index.ts",
       "description": "An example element.",
       "attributes": [

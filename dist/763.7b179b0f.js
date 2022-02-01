@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkweb_apps_aggregator=self.webpackChunkweb_apps_aggregator||[]).push([[763],{763:(e,a,s)=>{s.r(a),s.d(a,{templates:()=>p});const p={s387690973ce102bc:"Club de influencia"}}}]);

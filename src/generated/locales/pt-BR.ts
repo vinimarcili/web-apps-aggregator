@@ -5,5 +5,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 export const templates = {
-  s4d20f04e9e46a1bc: `Contagem de Cliques`,
+  s387690973ce102bc: `Clube da Influencia`,
 }
