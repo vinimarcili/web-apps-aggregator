@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_webpack_project=self.webpackChunkmy_webpack_project||[]).push([[763],{763:(e,c,s)=>{s.r(c),s.d(c,{templates:()=>p});const p={s4d20f04e9e46a1bc:"Cliques"}}}]);
