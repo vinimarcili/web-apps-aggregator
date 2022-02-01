@@ -114,7 +114,7 @@
     background: var(--gray_dark);
   }
   &.open {
-    height: 285px;
+    height: 305px;
     visibility: visible;
     ul {
       li {
@@ -131,7 +131,7 @@
     margin: 0;
     display: grid;
     grid-template-columns: 85px 85px 85px;
-    grid-template-rows: repeat(auto-fill, 85px);
+    grid-template-rows: repeat(auto-fill, 95px);
     column-gap: 15px;
     row-gap: 15px;
     align-items: center;
