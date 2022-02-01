@@ -112,8 +112,8 @@ export class MyElement extends LitElement {
           ${this.items.map((item) => {
             return html`
               <li>
-                <a href=${item?.url} target="_blank" .title=${item?.title} class="icon-${item?.color}">
-                  ${icons[item.icon as 'instagram' | 'pay' | 'squid']()}
+                <a href=${item?.url} target="_blank" .title=${item?.title} style="color: ${item?.color}">
+                  ${icons[item.icon as 'instagram' | 'pay' | 'squid'](item?.color)}
                   <span>${item?.title}</span>
                 </a>
               </li>

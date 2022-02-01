@@ -4,14 +4,14 @@
 }
 
 @mixin theme-light-button {
-  color: var(--white);
+  color: var(--gray_dark);
   svg {
     path {
-      fill: var(--white);
+      fill: var(--gray_dark);
     }
   }
   &:hover, &.open {
-    background-color: var(--gray_dark);
+    background-color: var(--gray_light);
     opacity: 0.7;
   }
 }
@@ -30,11 +30,23 @@
 }
 
 @mixin theme-dark-window {
-  background-color: var(--gray_dark);
+  background-color: var(--black);
 }
 
 @mixin theme-light-window {
   background-color: var(--white);
+  ul {
+    li {
+      a {
+          &:hover {
+            background-color: var(--gray_light);
+          }
+         span {
+          color: var(--black);
+         }
+      }
+    }
+  }
 }
 
 .toggle {
@@ -102,8 +114,15 @@
     background: var(--gray_dark);
   }
   &.open {
-    height: 450px;
+    height: 285px;
     visibility: visible;
+    ul {
+      li {
+        * {
+          transition: all 0.3s ease;
+        }
+      }
+    }
   }
   ul {
     width: 100%;
@@ -111,20 +130,41 @@
     list-style: none;
     margin: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 85px 85px 85px;
+    grid-template-rows: repeat(auto-fill, 85px);
+    column-gap: 15px;
+    row-gap: 15px;
     align-items: center;
     justify-content: center;
     text-align: center;
     li {
+      width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       a {
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+        border-radius: 5px;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         flex-direction: column;
+        text-decoration: none;
+        &:hover {
+          background-color: var(--gray_dark);
+        }
+        span {
+          color: var(--white);
+        }
+        svg {
+          width: 35px;
+          height: 35px;
+          margin-bottom: 10px;
+        }
       }
     }
   }
@@ -137,6 +177,7 @@
   @media (prefers-color-scheme: light) {
     &:not(.theme-dark) {
       @include theme-light-window();
+
     }
   }
   @media (prefers-color-scheme: dark) {
