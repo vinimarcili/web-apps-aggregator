@@ -1,6 +1,6 @@
 {
   "name": "web-apps-aggregator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "My webpack project",
   "main": "dist/web-apps-aggregator.js",
   "module": "dist/web-apps-aggregator.js",
